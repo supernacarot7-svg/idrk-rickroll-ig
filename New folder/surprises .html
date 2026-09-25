@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Video</title>
+	<style>
+		html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+		video { width: 100vw; height: 100vh; object-fit: cover; display: block; }
+	</style>
+</head>
+<body>
+	<video id="video" src="YTSave_YouTube_Rick-Astley-Never-Gonna-Give-You-Up-Offi_Media_dQw4w9WgXcQ_002_720p.mp4" autoplay muted controls playsinline></video>
+	<script>
+		const video = document.getElementById('video');
+		video.addEventListener('ended', () => video.play().catch(() => {}));
+		document.addEventListener('click', () => {
+			video.muted = false;
+			video.play().catch(() => {});
+			video.requestFullscreen?.().catch(() => {});
+		}, { once: true });
+	</script>
+</body>
+</html>
